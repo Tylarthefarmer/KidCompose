@@ -7,7 +7,7 @@
     {  
         Vector3 Vec;  
 		//0=nothing, 1=recording, 2=playing
-		public int status=1;
+		public int status=0;
 		public Vector3 spawnPos;
         // Start is called before the first frame update  
         void Start()  

@@ -26,6 +26,7 @@ namespace FinerGames.PitchDetector.Demo
 		public bool lowerPitchValue=false;
 		public bool increaseVolume=false;
 		public bool decreaseVolume=false;
+		public bool resetNotes=false;
 		float currentPitch=0;
 		[SerializeField] PitchDetector detector;
 		float elapsed = 0f;
@@ -78,6 +79,10 @@ namespace FinerGames.PitchDetector.Demo
 				{
 					metronome = metronome % secondsPerBeat;
 					metronomeTick.Play(0);
+				}
+
+				if (resetNotes){
+					resetNotes=resetNoteArray();
 				}
 			}
 			else if (status==0){
@@ -236,6 +241,20 @@ namespace FinerGames.PitchDetector.Demo
 				else{
 					return false;
 				}
+			}
+			return false;
+		}
+
+		bool resetNoteArray(){
+		//go through placed notes, delete each one, then clear array
+			for (int i=0; i<placedNoteList.Count;i++){
+				Destroy(placedNoteList[i]);
+			}
+			placedNoteList.Clear();
+
+			var clones = GameObject.FindGameObjectsWithTag ("dynamic");
+			foreach (var clone in clones){
+				Destroy(clone);
 			}
 			return false;
 		}
