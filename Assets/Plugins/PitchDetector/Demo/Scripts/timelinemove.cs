@@ -20,7 +20,7 @@
         {  
 			if (status != 0){
 				Vec = transform.localPosition;  
-				Vec.x += Time.deltaTime * 120;  
+				Vec.x += Time.deltaTime * 160;  
 				transform.localPosition = Vec;  
 			}
         }  
