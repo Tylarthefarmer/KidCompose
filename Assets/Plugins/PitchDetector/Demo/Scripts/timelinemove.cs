@@ -23,5 +23,8 @@
 				Vec.x += Time.deltaTime * 160;  
 				transform.localPosition = Vec;  
 			}
+			if (Vec.x >= 365){
+				status=0;
+			}
         }  
     }  
