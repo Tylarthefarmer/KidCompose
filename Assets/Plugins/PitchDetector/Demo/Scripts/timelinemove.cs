@@ -20,10 +20,10 @@
         {  
 			if (status != 0){
 				Vec = transform.localPosition;  
-				Vec.x += Time.deltaTime * 160;  
+				Vec.x += Time.deltaTime * 150;  
 				transform.localPosition = Vec;  
 			}
-			if (Vec.x >= 365){
+			if (Vec.x >= 316){
 				status=0;
 			}
         }  

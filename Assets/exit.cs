@@ -5,6 +5,7 @@ using UnityEngine;
 public class exit : MonoBehaviour
 {
     void OnMouseDown(){
+	Debug.Log("SDFA");
 		Application.Quit();
 	}
 }
